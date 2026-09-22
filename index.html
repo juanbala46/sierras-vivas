@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sierras Vivas</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Sierras <span>Vivas</span></h1>
+    <div class="linea-naranja"></div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-overlay">
+      <p class="hero-frase">Conocés. Prevenís. Protegés.</p>
+    </div>
+  </section>
+  <section class="temporada" id="temporada">
+  <p class="temporada-mensaje" id="temporada-mensaje"></p>
+  <p class="temporada-contador" id="temporada-contador"></p>
+  <p class="temporada-sub" id="temporada-sub"></p>
+</section>
+ <section class="videos">
+  <div class="videos-grilla">
+    <div class="video-card" onclick="abrirVideo('jBtMMFcGVlM')">
+<div class="video-miniatura" style="background-image: url('https://img.youtube.com/vi/jBtMMFcGVlM/hqdefault.jpg'); background-size: cover;"><span class="video-play">▶</span></div>
+      <h3 class="video-titulo">Cuando el fuego arrasa</h3>
+      <p class="video-subtitulo">La realidad de los incendios en las sierras.</p>
+    </div>
+    <div class="video-card" onclick="abrirVideo('WtIZMtufaas')">
+<div class="video-miniatura" style="background-image: url('https://img.youtube.com/vi/WtIZMtufaas/hqdefault.jpg'); background-size: cover;"><span class="video-play">▶</span></div>
+      <h3 class="video-titulo">Voces que enfrentan el fuego</h3>
+      <p class="video-subtitulo">Experiencia de nuestros bomberos.</p>
+    </div>
+    <div class="video-card" onclick="abrirVideo('pVPiEyW35vM')">
+<div class="video-miniatura" style="background-image: url('https://img.youtube.com/vi/pVPiEyW35vM/hqdefault.jpg'); background-size: cover;"><span class="video-play">▶</span></div>
+      <h3 class="video-titulo">Desde el aire</h3>
+      <p class="video-subtitulo">El combate de incendios forestales.</p>
+    </div>
+  </div>
+</section>
+
+<div class="modal-video" id="modalVideo" onclick="cerrarModal(event)">
+  <div class="modal-contenido">
+    <button class="modal-cerrar" onclick="cerrarVideo()">✕</button>
+    <iframe class="modal-player" id="videoPlayer" src="" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+  </div>
+  </div>
+
+
+
+  <section class="intro">
+  <div class="intro-tarjetas">
+    <div class="intro-tarjeta">
+      <span class="intro-icono">🔥</span>
+      <h3 class="intro-tarjeta-titulo">¿Qué son?</h3>
+      <p>Los incendios forestales son eventos de alta destrucción que afectan bosques nativos, fauna, suelo y comunidades enteras de las Sierras de Córdoba.</p>
+    </div>
+    <div class="intro-tarjeta">
+      <span class="intro-icono">🌿</span>
+      <h3 class="intro-tarjeta-titulo">¿Por qué importa?</h3>
+      <p>Córdoba perdio alrededor del 54% de los bosques nativos por los incendios forestales. Cada incendio destruye ecosistemas que tardan décadas en recuperarse y afecta el agua, el aire y la biodiversidad.</p>
+    </div>
+    <div class="intro-tarjeta">
+      <span class="intro-icono">📚</span>
+      <h3 class="intro-tarjeta-titulo">¿Qué es Sierras Vivas?</h3>
+      <p>Una herramienta educativa para instituciones, docentes y comunidades. Su objetivo es informar, prevenir y orientar — no reemplazar a bomberos ni organismos oficiales.</p>
+    </div>
+  </div>
+</section>
+<section class="video-destacado">
+  <div class="video-destacado-card" onclick="abrirVideo('_wC20IjwhJE')">
+    <div class="video-miniatura" style="background-image: url('https://img.youtube.com/vi/_wC20IjwhJE/hqdefault.jpg'); background-size: cover;"><span class="video-play">▶</span></div>
+    <h3 class="video-titulo">Desde el aula al cuartel</h3>
+    <p class="video-subtitulo">Una estudiante del ITAI comparte su formación como bombero voluntario y su compromiso con el ambiente.</p>
+  </div>
+</section>
+
+  <div class="acordeon">
+
+    <div class="item">
+      <button class="item-titulo" onclick="toggleItem(this)">
+        Importancia
+        <span class="flecha">▼</span>
+      </button>
+      <div class="item-contenido">
+        <div class="item-texto">
+          <p>Los bosques nativos de las Sierras de Córdoba cumplen un rol fundamental para el equilibrio del ambiente y la calidad de vida de las comunidades. Regulan el ciclo del agua, protegen los suelos de la erosión y albergan una gran diversidad de especies animales y vegetales únicas de la región.</p>
+          <p>Cuando un incendio arrasa estas áreas, no solo se pierde la vegetación visible: el suelo queda expuesto, los cursos de agua se ven afectados y la fauna pierde su hábitat. Sin embargo, un ecosistema quemado no está muerto — las raíces permanecen activas bajo la superficie y la mayoría de las plantas nativas rebrota con fuerza si se le dan las condiciones para recuperarse.</p>
+          <p>Por eso, proteger y conocer estos ambientes es el primer paso para defenderlos.</p>
+        </div>
+        <img src="img-importancia.png" alt="Importancia" class="item-imagen" />
+      </div>
+    </div>
+
+    <div class="item">
+      <button class="item-titulo" onclick="toggleItem(this)">
+        Causas
+        <span class="flecha">▼</span>
+      </button>
+      <div class="item-contenido">
+        <div class="item-texto">
+          <p>El <strong>95% de los incendios forestales</strong> son provocados por la mano del hombre. Los casos más frecuentes son fogatas y colillas mal apagadas, el abandono de tierras y la quema de pastizales para preparar áreas de pastoreo. A esto se suman factores que agravan la propagación: falta de precipitaciones, temperaturas elevadas y vientos fuertes.</p>
+<p>Los datos oficiales de 2025 confirman la magnitud del problema: se registraron <strong>675 incendios</strong> en Córdoba, que afectaron <strong>21.183 hectáreas</strong>. El período más crítico fue entre julio y octubre, con 512 incendios y más de 18.000 hectáreas afectadas. Octubre concentró el <strong>48,4% de toda la superficie quemada</strong> del año.</p>
+<p>Entre los eventos más graves se destacó el incendio en el Parque Nacional Quebrada del Condorito, que arrasó aproximadamente 6.350 hectáreas. Los departamentos más afectados fueron San Justo (4.650 ha), San Alberto (3.202 ha) y Punilla (3.013 ha).</p>
+<p class="fuente">Fuente: Informe Anual de Áreas Afectadas por Incendios — Mesa Técnica de Áreas Quemadas, febrero 2026.</p>
+        </div>
+        <img src="img-causas.jpg" alt="Causas" class="item-imagen" />
+      </div>
+    </div>
+
+    <div class="item">
+      <button class="item-titulo" onclick="toggleItem(this)">
+        Clima
+        <span class="flecha">▼</span>
+      </button>
+      <div class="item-contenido">
+        <div class="item-texto">
+          <p>Las condiciones climáticas juegan un papel clave en la propagación de los incendios. Las temporadas de sequía prolongadas, combinadas con altas temperaturas y vientos fuertes, convierten el monte en combustible fácil de encender.</p>
+          <p>En Argentina, el riesgo varía según la región y la época del año. Entre diciembre y marzo, las provincias del sur tienen riesgo elevado. Desde octubre hasta marzo, Entre Ríos, Corrientes, Misiones, Chaco y Buenos Aires son las zonas con mayor peligro. En las Sierras de Córdoba, el verano seco es el período más crítico.</p>
+        </div>
+        <img src="img-clima.jpeg" alt="Clima" class="item-imagen" />
+      </div>
+    </div>
+
+    <div class="item">
+      <button class="item-titulo" onclick="toggleItem(this)">
+        Consecuencias
+        <span class="flecha">▼</span>
+      </button>
+      <div class="item-contenido">
+        <div class="item-texto">
+          <p>Los incendios forestales generan un impacto profundo sobre el ambiente y las comunidades. La pérdida de vegetación deja el suelo expuesto a la erosión, altera los cursos de agua y destruye el hábitat de cientos de especies animales y vegetales.</p>
+          <p>Las plantas exóticas invasoras suelen recuperarse más rápido que las nativas, lo que dificulta la restauración natural del ecosistema. Además, el ganado que pisa el suelo sin vegetación agrava aún más el daño, degradando grandes cantidades de tierra.</p>
+          <p>A nivel social, los incendios afectan la calidad del aire, ponen en riesgo viviendas y comunidades, y generan pérdidas económicas difíciles de recuperar.</p>
+        </div>
+        <img src="img-consecuencias.webp" alt="Consecuencias" class="item-imagen" />
+      </div>
+    </div>
+
+    <div class="item">
+      <button class="item-titulo" onclick="toggleItem(this)">
+        Prevención
+        <span class="flecha">▼</span>
+      </button>
+      <div class="item-contenido">
+        <div class="item-texto">
+          <p>La prevención es la herramienta más poderosa contra los incendios forestales. Pequeñas acciones cotidianas pueden marcar una gran diferencia:</p>
+          <ul>
+            <li>No arrojar fósforos, colillas ni botellas rotas al suelo.</li>
+            <li>No tirar basura en el campo, especialmente vidrio roto.</li>
+            <li>Si hacés una fogata, rodeala con piedras y apagala completamente con agua o tierra.</li>
+            <li>Evitar encender fuego en épocas de sequía.</li>
+            <li>Si ves una columna de humo, avisá de inmediato a los bomberos.</li>
+          </ul>
+          <p>Para quienes viven en zonas de riesgo: mantené el pasto corto, no apilés ramas cerca de la vivienda y construí una franja de al menos 3 metros sin vegetación alrededor de tu casa.</p>
+        </div>
+        <img src="img-prevencion.webp" alt="Prevención" class="item-imagen" />
+      </div>
+    </div>
+    <section class="galeria">
+  <h2 class="galeria-titulo">Imágenes del terreno</h2>
+  <p class="galeria-subtitulo">Fotografías de David Oviedo · Brigadista Forestal</p>
+  <div class="carrusel">
+    <button class="carrusel-btn carrusel-prev" onclick="moverCarrusel(-1)">&#8249;</button>
+    <div class="carrusel-ventana">
+      <div class="carrusel-pista" id="carruselPista">
+        <div class="carrusel-slide"><img src="galeria-1.jpeg" alt="Cuadrilla de bomberos en la cima de la sierra"></div>
+        <div class="carrusel-slide"><img src="galeria-2.jpeg" alt="Columna de humo sobre las Sierras de Córdoba al atardecer"></div>
+        <div class="carrusel-slide"><img src="galeria-3.jpeg" alt="Sol entre el humo sobre las sierras"></div>
+        <div class="carrusel-slide"><img src="galeria-4.jpeg" alt="Bomberos voluntarios en el bosque afectado"></div>
+        <div class="carrusel-slide"><img src="galeria-5.jpeg" alt="Camioneta de bomberos avanzando por el monte quemado"></div>
+        <div class="carrusel-slide"><img src="galeria-6.jpeg" alt="Bombero frente al paisaje devastado por el fuego"></div>
+      </div>
+    </div>
+    <button class="carrusel-btn carrusel-next" onclick="moverCarrusel(1)">&#8250;</button>
+  </div>
+  <div class="carrusel-dots" id="carruselDots"></div>
+</section>
+
+  </div>
+  <section class="emergencia">
+  <div class="emergencia-contenido">
+    <p class="emergencia-label">En caso de incendio, llamá de inmediato</p>
+    <p class="emergencia-numero">-100- (bomberos de cordoba)</p>
+    <p class="emergencia-numero">-103- (defensa civil)</p>
+    <p class="emergencia-numero">-911- (emergencias)</p>
+    <p class="emergencia-sub">Bomberos Voluntarios · Córdoba</p>
+  </div>
+</section>
+
+  <footer>
+    <p class="footer-proyecto">Sierras Vivas</p>
+    <p class="footer-escuela">Instituto Técnico Agrario Industrial · Monte Buey, Córdoba</p>
+    <p class="footer-integrantes">Fede Díaz Quaglia · Juan Cruz Ballario · Julia Perrone · Valentino Rolando</p>
+        <div class="footer-colaboradores">
+      <p class="footer-colaboradores-titulo">Colaboradores</p>
+      <div class="footer-colaboradores-lista">
+        <div class="footer-colaborador">
+          <span class="footer-colaborador-nombre">David Oviedo</span>
+          <span class="footer-colaborador-rol">Oficial Subinspector · Brigadista Forestal</span>
+        </div>
+        <div class="footer-colaborador">
+          <span class="footer-colaborador-nombre">Luis Viccari</span>
+          <span class="footer-colaborador-rol">coord. de la Regional 8 bomberos cba.</span>
+        </div>
+      <div class="footer-colaborador">
+        <span class="footer-colaborador-nombre">Omar Díaz Ferrari</span>
+        <span class="footer-colaborador-rol">CEO de Aaxod SA</span>
+        <span class="footer-colaborador-extra">(empresa que presta servicios al ANMF)</span>
+      </div>
+      </div>
+    </div><p class="footer-anio">© 2026</p>
+  </footer>
+
+  <script>
+    function toggleItem(boton) {
+      const contenido = boton.nextElementSibling;
+      const flecha = boton.querySelector('.flecha');
+      const estaAbierto = contenido.classList.contains('abierto');
+
+      document.querySelectorAll('.item-contenido').forEach(c => c.classList.remove('abierto'));
+      document.querySelectorAll('.flecha').forEach(f => f.classList.remove('girada'));
+
+      if (!estaAbierto) {
+        contenido.classList.add('abierto');
+        flecha.classList.add('girada');
+      }
+    }
+    (function() {
+  const hoy = new Date();
+  const mes = hoy.getMonth() + 1;
+  const año = hoy.getFullYear();
+  const seccion = document.getElementById('temporada');
+  const mensaje = document.getElementById('temporada-mensaje');
+  const contador = document.getElementById('temporada-contador');
+  const sub = document.getElementById('temporada-sub');
+
+  if (mes >= 7 && mes <= 10) {
+    const finTemporada = new Date(año, 10, 1);
+    const dias = Math.ceil((finTemporada - hoy) / (1000 * 60 * 60 * 24));
+    seccion.classList.add('alerta');
+    mensaje.textContent = '⚠️ Temporada de riesgo activa';
+    contador.textContent = dias + ' días';
+    sub.textContent = 'quedan hasta el fin de la temporada crítica · Extremá los cuidados';
+  } else {
+    const proximoJulio = new Date(mes < 7 ? año : año + 1, 6, 1);
+    const dias = Math.ceil((proximoJulio - hoy) / (1000 * 60 * 60 * 24));
+    seccion.classList.add('calma');
+    mensaje.textContent = 'Temporada de riesgo';
+    contador.textContent = dias + ' días';
+    sub.textContent = 'para el inicio de la próxima temporada crítica · Julio – Octubre';
+  }
+})();
+function abrirVideo(id) {
+  document.getElementById('videoPlayer').src = 'https://www.youtube.com/embed/' + id + '?autoplay=1';
+  document.getElementById('modalVideo').classList.add('activo');
+}
+function cerrarVideo() {
+  document.getElementById('videoPlayer').src = '';
+  document.getElementById('modalVideo').classList.remove('activo');
+}
+function cerrarModal(e) {
+  if (e.target === document.getElementById('modalVideo')) cerrarVideo();
+}
+
+let carruselActual = 0;
+const totalSlides = 6;
+
+function moverCarrusel(dir) {
+  carruselActual = (carruselActual + dir + totalSlides) % totalSlides;
+  actualizarCarrusel();
+}
+
+function irASlide(n) {
+  carruselActual = n;
+  actualizarCarrusel();
+}
+
+function actualizarCarrusel() {
+  document.getElementById('carruselPista').style.transform = 'translateX(-' + (carruselActual * 100) + '%)';
+  document.querySelectorAll('.carrusel-dot').forEach(function(dot, i) {
+    dot.classList.toggle('activo', i === carruselActual);
+  });
+}
+
+(function() {
+  const dotsContainer = document.getElementById('carruselDots');
+  for (let i = 0; i < totalSlides; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'carrusel-dot' + (i === 0 ? ' activo' : '');
+    dot.onclick = (function(n) { return function() { irASlide(n); }; })(i);
+    dotsContainer.appendChild(dot);
+  }
+})();
+
+  </script>
+
+</body>
+</html>
