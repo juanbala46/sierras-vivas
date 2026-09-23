@@ -452,3 +452,34 @@ footer {
   }
 
 }
+/* ===== ENCUESTA ===== */
+.encuesta {
+  background: #f0ebe1;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.encuesta-contenido {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.encuesta-titulo {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2rem;
+  color: #1b3a28;
+  margin-bottom: 12px;
+}
+
+.encuesta-sub {
+  font-size: 1rem;
+  color: #5c5c52;
+  margin-bottom: 32px;
+  line-height: 1.7;
+}
+
+.encuesta-iframe {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
